@@ -37,11 +37,9 @@ public class TestDice {
 			sum+=a;
 		}
 		mean=sum/(double)arr.length;//calculating mean
-		if(mean>lowerThreshold &&mean<upperThreshold){//true if mean is within the threshold boundaries
+		if(mean>=lowerThreshold &&mean<=upperThreshold){//true if mean is within the threshold boundaries
 			test=true;
 		}
 		assertTrue(test);//asserts the boolean value of "test"
 	}
-	
-
 }
