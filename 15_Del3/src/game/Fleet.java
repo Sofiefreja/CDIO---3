@@ -18,19 +18,16 @@ public class Fleet extends Ownable {
 			switch (owner.owned(this)) {
 			case 1:
 				return RENT_1;
-				break;
 			case 2:
 				return RENT_2;
-				break;
 			case 3:
 				return RENT_3;
-				break;
 			case 4:
 				return RENT_4;
-				break;
 			}
 		}
-
+		return 0;
+		
 	}
 
 	public void landOnSquare(Player player) {
