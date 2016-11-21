@@ -2,17 +2,55 @@ package game;
 
 import java.awt.Color;
 
+import java.util.*;
+
 public class Player {
 
 	private String name;
 	private Account balance = new Account();
 	private Vehicle vehicle = new Vehicle();
+	ArrayList<Square> owned = new ArrayList<Square>();
 	
 	public Player (String name) {
 		this.name = name;
 		balance.deposit(30000);
 		// Car car = new Car.Builder().typeUfo().primaryColor(getColor()).build(); Skal bruges i GUIControl for createPlayer()
 	}
+	
+	/**
+	 * Method for adding a bought square to list of squares a player owns
+	 * @param square
+	 */
+	
+	public void bought(Square square) {
+		owned.add(square);
+	}
+	
+	/**
+	 * Method for determining how many of one type of square that a player owns
+	 * @param square
+	 * @return Returns amount of squares owned of the type integer
+	 */
+	
+	public int owned(Square square) {
+		
+		int counter = 0;
+		
+		for (int i = 0; i <= owned.size(); i++) {
+			
+			if (owned.get(i).getClass().equals(square.getClass())) {
+				counter++;
+			}
+			
+		}
+		
+		return counter;
+	}
+		
+	/**
+	 * Method for returning the name of the player
+	 * @return Player name of the type string
+	 */
 	
 	public String toString() {
 		return name;
