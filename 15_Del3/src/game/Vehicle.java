@@ -15,6 +15,12 @@ public class Vehicle {
 		
 	}
 	
+	/**
+	 * Method for calculating the new position of a player's vehicle
+	 * @param value
+	 * @return The new position of the player's vehicle of the type integer
+	 */
+	
 	public int move(int value) {
 	
 		previousPosition = currentPosition;
