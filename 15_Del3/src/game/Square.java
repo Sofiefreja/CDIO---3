@@ -5,7 +5,5 @@ public abstract class Square {
 	public Square( String name){
 		this.name=name;
 	}
-	public void landOnSquare(Player player){
-	
-	}
+	public abstract void landOnSquare(Player player);
 }

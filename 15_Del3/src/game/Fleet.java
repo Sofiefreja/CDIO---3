@@ -12,7 +12,7 @@ public class Fleet extends Ownable {
 	public Fleet(String name, int price) {
 		super(name, price);
 	}
-
+	@Override
 	public int getRent() {
 		if (owner != null) {
 			switch (owner.owned(this)) {
@@ -27,9 +27,9 @@ public class Fleet extends Ownable {
 			}
 		}
 		return 0;
-		
-	}
 
+	}
+	@Override
 	public void landOnSquare(Player player) {
 		if (owner != null) {
 			player.pay(getRent());
