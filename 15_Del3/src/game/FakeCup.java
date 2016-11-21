@@ -1,6 +1,6 @@
 package game;
 
-public class FakeCup {
+public class FakeCup extends Cup {
 	private FakeDice d1;
 	private FakeDice d2;
 	

@@ -3,7 +3,6 @@ package test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import game.Cup;
 import game.FakeCup;
 
 public class TestCup {
@@ -18,6 +17,13 @@ public class TestCup {
 		assertEquals(cup.getD1(),5);
 		assertEquals(cup.getD2(),5);
 		assertTrue(cup.getEquals());
+		
+		FakeCup cup2= new FakeCup(4,6);
+		assertFalse(cup2.getEquals());
+		assertEquals(cup2.roll(), 10);
+		assertEquals(cup2.getSum(),10);
+		assertEquals(cup2.getD1(),4);
+		assertEquals(cup2.getD2(),6);
 	}
 
 }
