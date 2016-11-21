@@ -47,7 +47,6 @@ public class Board {
 		squares.add(Tower);
 		Territory Castle = new Territory("Castle", 8000);
 		squares.add(Castle);
-		System.out.println(squares);
-		return Square;
+	return Square;
 	}
 }
