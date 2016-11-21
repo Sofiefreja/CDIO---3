@@ -1,6 +1,6 @@
 package game;
 
-public class Ownable extends Square {
+public abstract class Ownable extends Square {
 	protected Player owner;
 	protected int price;
 	
@@ -8,7 +8,5 @@ public class Ownable extends Square {
 		super(name);
 		this.price=price;
 	}
-	public int getRent(){
-		
-	}
+	public abstract int getRent();
 }
