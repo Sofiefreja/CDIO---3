@@ -5,11 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import game.Dice;
+import game.FakeDice;
 
 public class TestDice {
 
 	@Test
-	public void test() {
+	public void testProbability() {
 		/*
 		 * Uses mean values to determine if the dice throws values within some threshholds of the expected mean value.
 		 */
@@ -34,5 +35,13 @@ public class TestDice {
 		}
 		assertTrue(test);//asserts the boolean value of "test"
 	}
-
+	
+	@Test
+	public void testMethods(){
+		int faceValue=3;
+		FakeDice d1 = new FakeDice(faceValue);
+		
+		assertEquals(d1.roll(),faceValue);
+		assertEquals(d1.getValue(),faceValue);
+	}
 }

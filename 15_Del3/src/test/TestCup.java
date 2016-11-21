@@ -4,16 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import game.Cup;
+import game.FakeCup;
 
 public class TestCup {
 	
 	@Test
-	public void test() {
-		Cup cup = new Cup();
-		System.out.println(cup.roll());
+	public void testProbability() {
+
 		/*
 		 * Uses mean values to determine if the cup throws values within some threshholds of the expected mean value.
 		 */
+		Cup cup = new Cup();
 		int n=100000;//define number of rolls
 		boolean test=false; //initializes the boolean test value.
 		double lowerThreshold=6.95;//define lower threshold for an acceptable mean
@@ -36,6 +37,21 @@ public class TestCup {
 			test=true;
 		}
 		assertTrue(test);//asserts the boolean value of "test"
+	}
+	
+	@Test
+	public void testMethods(){
+		//Tests the methods getEquals, getD1 and getD2.
+		FakeCup cup = new FakeCup(5,5);
+		
+		//tests all the methods with expected outcome.
+		assertEquals(cup.roll(), 10);
+		assertEquals(cup.getSum(),10);
+		assertEquals(cup.getD1(),5);
+		assertEquals(cup.getD2(),5);
+		assertTrue(cup.getEquals());
+	
+	
 	}
 
 }

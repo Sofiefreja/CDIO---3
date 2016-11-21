@@ -1,8 +1,8 @@
 package game;
 
 public class Cup {
-	Dice d1 = new Dice(); //initiating dices to use in the cup.
-	Dice d2 = new Dice();
+	private Dice d1 = new Dice(); //initiating dices to use in the cup.
+	private Dice d2 = new Dice();
 	
 	/**
 	 * Method for rolling the dices
