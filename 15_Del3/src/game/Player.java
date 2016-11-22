@@ -9,7 +9,7 @@ public class Player {
 	private String name;
 	private Account balance = new Account();
 	private Vehicle vehicle = new Vehicle();
-	ArrayList<Square> owned = new ArrayList<Square>();
+	ArrayList<Ownable> owned = new ArrayList<Ownable>();
 	
 	/**
 	 * Constructor that initiates a player into hte game
@@ -27,7 +27,7 @@ public class Player {
 	 * @param square
 	 */
 	
-	public void bought(Square square) {
+	public void bought(Ownable square) {
 		owned.add(square);
 	}
 	
@@ -37,7 +37,7 @@ public class Player {
 	 * @return Returns amount of squares owned of the type integer
 	 */
 	
-	public int owned(Square square) {
+	public int owned(Ownable square) {
 		
 		int counter = 0;
 		
