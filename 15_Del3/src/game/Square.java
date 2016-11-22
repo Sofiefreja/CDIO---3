@@ -1,9 +1,10 @@
 package game;
-
+/**
+ * Abstract class Square, superclass for all Squares.
+ * @author Mathias Tværmose Gleerup
+ *
+ */
 public abstract class Square {
-	/**
-	 * Abstract class, super for all types of Squares.
-	 */
 	protected String name;
 	
 	/**

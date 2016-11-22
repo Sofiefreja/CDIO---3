@@ -1,9 +1,10 @@
 package game;
 /**
- * Abstract class, extended from Square, which is super class to all ownable squares.
+ * Abstract class Ownable, extended from Square. 
+ * Superclass to all ownable types of Square.
  * @author Mathias Tværmose Gleerup
  *
- */
+ */ 
 public abstract class Ownable extends Square {
 	/**
 	 * Adds a field Player and int for all ownable squares.
@@ -27,7 +28,8 @@ public abstract class Ownable extends Square {
 	
 	
 	@Override
-	public void landOnSquare(Player player) {//Implements the inherited method landOnSquare, to be overridden for each type with a different getRent() method.
+	//Implements the inherited method landOnSquare, to be overridden for each type with a different getRent() method.
+	public void landOnSquare(Player player) {
 		if (owner != null) {
 			player.pay(getRent());
 			owner.deposit(getRent());

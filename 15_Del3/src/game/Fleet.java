@@ -1,7 +1,10 @@
 package game;
 
-import java.util.*;
-
+/**
+ * Class Fleet extended from Ownable.
+ * @author Mathias Tværmose Gleerup
+ *
+ */
 public class Fleet extends Ownable {
 	/*
 	 * integers RENT_#

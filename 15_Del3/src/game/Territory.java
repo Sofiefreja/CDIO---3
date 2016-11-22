@@ -1,5 +1,9 @@
 package game;
-
+/**
+ * Class Territory extended from Ownable.
+ * @author Mathias Tværmose Gleerup
+ *
+ */
 public class Territory extends Ownable {
 	int rent;
 	/**
