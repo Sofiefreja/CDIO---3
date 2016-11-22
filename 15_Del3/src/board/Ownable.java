@@ -42,7 +42,7 @@ public abstract class Ownable extends Square {
 			player.pay(getRent());
 			owner.deposit(getRent());
 		} else {
-			if (GUIControl.getBuyChoice(this) == true) {
+			if (GUIControl.getBuyChoice(this) == true) { //asks the player whether he wants to buy the square the player landed on or not.
 				player.bought(this);
 				player.pay(price);
 				owner = player;

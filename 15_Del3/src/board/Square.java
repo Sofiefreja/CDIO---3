@@ -23,6 +23,10 @@ public abstract class Square {
 	public String toString(){
 		return name;
 	}
+	/**
+	 * Returns the id of the square.
+	 * @return id
+	 */
 	public int getID(){
 		return id;
 	}
