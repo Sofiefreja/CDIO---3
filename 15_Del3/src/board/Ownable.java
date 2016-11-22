@@ -1,5 +1,6 @@
 package board;
 import game.Player;
+import game.GUIControl;
 /**
  * Abstract class Ownable, extended from Square. 
  * Superclass to all ownable types of Square.

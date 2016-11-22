@@ -1,5 +1,6 @@
 package board;
 import game.Player;
+import game.GUIControl;
 /**
  * Class LaborCamp extended from Ownable.
  * @author Mathias Tværmose Gleerup
@@ -22,7 +23,7 @@ public class LaborCamp extends Ownable{
 	public int getRent() {//Overrides the getRent() method from Ownable.
 		int rent=0;
 		if(owner!=null){//if the instance is owned, the rent is calculated.
-			rent=GUIControl.getUserRoll()*baseRent*owner.owned(this);
+			rent=GUIControl.getUserRoll()*baseRent*owner.ownedTypes(this);
 		}
 		return rent;
 	}

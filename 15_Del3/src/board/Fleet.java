@@ -28,7 +28,7 @@ public class Fleet extends Ownable {
 	@Override
 	public int getRent() {//Implements the inherited getRent() for Fleet
 		if (owner != null) { //If the owner field is not empty for the current instance, following statement is initiated.
-			switch (owner.owned(this)) { //uses a method on the Player owner, to return how many instances of this type the owner owns.
+			switch (owner.ownedTypes(this)) { //uses a method on the Player owner, to return how many instances of this type the owner owns.
 			case 1:
 				return RENT_1;
 			case 2:
