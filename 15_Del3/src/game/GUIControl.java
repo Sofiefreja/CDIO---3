@@ -11,49 +11,50 @@ public class GUIControl {
 
 	
 public void makeBoard() { // Method that creates the board for the GUI and sets the squares with their descriptions, colouring and number
+	//terr = white, ref = yellow, fleet = blue, tax = red,  labor = green.
 	Field[] fields = new Field[21];
-	fields[0] = new Street.Builder().setTitle("Begin").setDescription("This is where the game begins.")
-			.setSubText(" ").setBgColor(Color.yellow).setFgColor(Color.green).build();
-	fields[1] = new Shipping.Builder().setTitle("Tower").setDescription("You entered the tower. You are awarded:")
-			.setSubText("+250").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[2] = new Street.Builder().setTitle("Crater").setDescription("You fell into the crater. You lose:")
-			.setSubText("-100").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[3] = new Refuge.Builder().setTitle("Palace Gates").setDescription("You are standing at the palace gates. You are awarded:")
-			.setSubText("+100").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[4] = new Tax.Builder().setTitle("Cold Desert").setDescription("You entered the cold desert. You lose:")
-			.setSubText("-20").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[5] = new Street.Builder().setTitle("Walled City").setDescription("You have reached Walled city! You are awarded:")
-			.setSubText("+180").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[6] = new Shipping.Builder().setTitle("Monastery").setDescription("You entered the Monastery. Nothing happens..")
-			.setSubText("0").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[7] = new Street.Builder().setTitle("Black Cave").setDescription("You were pushed into a black cave. You lose:")
-			.setSubText("-70").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[8] = new Street.Builder().setTitle("Huts in the mountain").setDescription("You got to the wonderful huts in the mountain. You are awarded:")
-			.setSubText("+60").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[9] = new Tax.Builder().setTitle("The Werewall").setDescription("You have reached the feared Werewall. You gain another turn, however you lose:")
-			.setSubText("-80").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[10] = new Street.Builder().setTitle("The pit").setDescription("You stumbled into the pit. You lose:")
-			.setSubText("-50").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[11] = new Street.Builder().setTitle("Goldmine").setDescription("You found the goldmine! You are rich!!! You gain:")
-			.setSubText("+650").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[12] = new Shipping.Builder().setTitle("Begin").setDescription("This is where the game begins.")
-			.setSubText(" ").setBgColor(Color.yellow).setFgColor(Color.green).build();
-	fields[13] = new Street.Builder().setTitle("Tower").setDescription("You entered the tower. You are awarded:")
-			.setSubText("+250").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[14] = new Refuge.Builder().setTitle("Crater").setDescription("You fell into the crater. You lose:")
-			.setSubText("-100").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[15] = new Tax.Builder().setTitle("Palace Gates").setDescription("You are standing at the palace gates. You are awarded:")
-			.setSubText("+100").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[16] = new Street.Builder().setTitle("Cold Desert").setDescription("You entered the cold desert. You lose:")
-			.setSubText("-20").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[17] = new Shipping.Builder().setTitle("Walled City").setDescription("You have reached Walled city! You are awarded:")
-			.setSubText("+180").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[18] = new Street.Builder().setTitle("Monastery").setDescription("You entered the Monastery. Nothing happens..")
-			.setSubText("0").setBgColor(Color.red).setFgColor(Color.blue).build();
-	fields[19] = new Street.Builder().setTitle("Black Cave").setDescription("You were pushed into a black cave. You lose:")
-			.setSubText("-70").setBgColor(Color.blue).setFgColor(Color.red).build();
-	fields[20] = new Street.Builder().setTitle("Huts in the mountain").setDescription("You got to the wonderful huts in the mountain. You are awarded:")
-			.setSubText("+60").setBgColor(Color.red).setFgColor(Color.blue).build();
+	fields[0] = new Street.Builder().setTitle("Tribe Encampment").setDescription(".")
+			.setSubText(" ").setRent("100").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[1] = new Shipping.Builder().setTitle("Second Sail").setDescription(".")
+			.setSubText("+250").setBgColor(Color.blue).setFgColor(Color.blue).build();
+	fields[2] = new Street.Builder().setTitle("Crater").setDescription(".")
+			.setSubText("-100").setRent("300").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[3] = new Refuge.Builder().setTitle("Walled City").setDescription(".")
+			.setSubText("+100").setBgColor(Color.yellow).setFgColor(Color.yellow).build();
+	fields[4] = new Tax.Builder().setTitle("Huts in the mountain").setDescription(":")
+			.setSubText("-20").setBgColor(Color.green).setFgColor(Color.green).build();
+	fields[5] = new Street.Builder().setTitle("Mountain").setDescription(".")
+			.setSubText("+180").setRent("500").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[6] = new Shipping.Builder().setTitle("Sea Grover").setDescription(".")
+			.setSubText("0").setBgColor(Color.blue).setFgColor(Color.blue).build();
+	fields[7] = new Street.Builder().setTitle("Cold Desert").setDescription(".")
+			.setSubText(".").setRent("700").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[8] = new Street.Builder().setTitle("Black Cave").setDescription(".")
+			.setSubText(".").setRent("1000").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[9] = new Tax.Builder().setTitle("Goldmine").setDescription(".")
+			.setSubText("-80").setBgColor(Color.red).setFgColor(Color.red).build();
+	fields[10] = new Street.Builder().setTitle("The Werewall").setDescription(".")
+			.setSubText(".").setRent("1300").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[11] = new Street.Builder().setTitle("Mountain Village").setDescription(".")
+			.setSubText(".").setRent("1600").setBgColor(Color.blue).setFgColor(Color.red).build();
+	fields[12] = new Shipping.Builder().setTitle("The Buccaneers").setDescription(".")
+			.setSubText(" ").setBgColor(Color.blue).setFgColor(Color.blue).build();
+	fields[13] = new Street.Builder().setTitle("South Citidel").setDescription(".")
+			.setSubText("+250").setRent("2000").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[14] = new Refuge.Builder().setTitle("Monestary").setDescription(".")
+			.setSubText("-100").setBgColor(Color.yellow).setFgColor(Color.yellow).build();
+	fields[15] = new Tax.Builder().setTitle("The Pit").setDescription(".")
+			.setSubText("+100").setBgColor(Color.green).setFgColor(Color.green).build();
+	fields[16] = new Street.Builder().setTitle("Palace Gates").setDescription(".")
+			.setSubText("-20").setRent("2600").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[17] = new Shipping.Builder().setTitle("Privateer armada").setDescription(".")
+			.setSubText("+180").setBgColor(Color.blue).setFgColor(Color.blue).build();
+	fields[18] = new Street.Builder().setTitle("Caravan").setDescription(".")
+			.setSubText("0").setBgColor(Color.red).setFgColor(Color.red).build();
+	fields[19] = new Street.Builder().setTitle("Tower").setDescription(".")
+			.setSubText("-70").setRent("3200").setBgColor(Color.white).setFgColor(Color.white).build();
+	fields[20] = new Street.Builder().setTitle("Castle").setDescription(".")
+			.setSubText("+60").setRent("4000").setBgColor(Color.white).setFgColor(Color.white).build();
 	GUI.create(fields);
 	}
 
@@ -82,7 +83,7 @@ public void makeBoard() { // Method that creates the board for the GUI and sets 
 	// Creation of players, saving the number of players to an integer and the name of a player as a string in an array.
 	public String[] numberOfPlayers()
 	{
-	int numberOfPlayers = GUI.getUserInteger("How many players are you (between 2-6)", 2, 6);
+	int numberOfPlayers = GUI.getUserInteger("How many players are you? (between 2-6)", 2, 6);
 	String[] playerNames = new String[numberOfPlayers];
 	for (int i=1; i<=numberOfPlayers; i++)
 	{
@@ -99,7 +100,7 @@ public void makeBoard() { // Method that creates the board for the GUI and sets 
 	}
 	
 	
-	//Moves vehicle on board.
+	//Move vehicle on the board.
 	public void moveVehicle(Player thePlayer){
 		thePlayer.getPreviousPosition();
 		GUI.removeCar(thePlayer.getPreviousPosition(), thePlayer.toString());
