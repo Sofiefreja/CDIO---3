@@ -1,4 +1,7 @@
-package game;
+package test;
+
+import game.Dice;
+
 /**
  * Class FakeDice extended from Dice.
  * Is used to test the methods of Dice.
