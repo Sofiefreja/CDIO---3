@@ -26,6 +26,12 @@ public abstract class Ownable extends Square {
 	 */
 	public abstract int getRent();
 	
+	/**
+	 * Method for clearing the owner field in this instance.
+	 */
+	public void clearOwner(){
+		this.owner=null;
+	}
 	
 	@Override
 	//Implements the inherited method landOnSquare, to be overridden for each type with a different getRent() method.

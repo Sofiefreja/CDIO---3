@@ -1,11 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import game.Dice;
-import game.FakeDice;
 
 public class TestDice {
 	@Test

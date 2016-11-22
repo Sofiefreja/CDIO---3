@@ -1,9 +1,8 @@
-package test;
+xpackage test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import game.FakeCup;
 
 public class TestCup {
 	@Test

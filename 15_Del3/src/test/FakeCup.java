@@ -1,4 +1,7 @@
-package game;
+package test;
+
+import game.Cup;
+
 /**
  * Class FakeCup exteded from Cup.
  * Uses two FakeDice.
