@@ -1,9 +1,10 @@
 package game;
 
 import java.awt.Color;
-import board.Ownable;
+
 import java.util.*;
 
+import board.Ownable;
 
 public class Player {
 
@@ -30,6 +31,7 @@ public class Player {
 	
 	public void bought(Ownable square) {
 		owned.add(square);
+
 	}
 	
 	/**
@@ -38,7 +40,7 @@ public class Player {
 	 * @return Returns amount of squares owned of the type integer
 	 */
 	
-	public int owned(Ownable square) {
+	public int ownedTypes(Ownable square) {
 		
 		int counter = 0;
 		
@@ -51,6 +53,19 @@ public class Player {
 		}
 		
 		return counter;
+	}
+	
+	public int[] ownedID() {
+		
+		int[] squareID = new int[owned.size()];
+		
+		for (int i=0; i < owned.size(); i++) {
+			
+			squareID[i] = owned.get(i).getID();
+		}
+		
+		return squareID;
+		
 	}
 		
 	/**
