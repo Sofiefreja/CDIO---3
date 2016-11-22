@@ -16,6 +16,7 @@ public abstract class Ownable extends Square {
 	/**
 	 * Constructor which takes a name and a price of the square as parameters.
 	 * @param name
+	 * @param id
 	 * @param price
 	 */
 	public Ownable(String name,int id, int price){
@@ -42,7 +43,7 @@ public abstract class Ownable extends Square {
 			player.pay(getRent());
 			owner.deposit(getRent());
 		} else {
-			if (GUIControl.getBuyChoice(this) == true) {
+			if (GUIControl.getBuyChoice(this) == true) { //asks the player whether he wants to buy the square the player landed on or not.
 				player.bought(this);
 				player.pay(price);
 				owner = player;

@@ -11,6 +11,7 @@ public abstract class Square {
 	/**
 	 * Super constructor which takes a String name as a parameter.
 	 * @param name
+	 * @param id
 	 */
 	public Square( String name, int id){
 		this.name=name;
@@ -23,6 +24,10 @@ public abstract class Square {
 	public String toString(){
 		return name;
 	}
+	/**
+	 * Returns the id of the square.
+	 * @return id
+	 */
 	public int getID(){
 		return id;
 	}

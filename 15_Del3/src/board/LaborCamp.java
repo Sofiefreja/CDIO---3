@@ -13,6 +13,7 @@ public class LaborCamp extends Ownable{
 	/**
 	 * Constructor for LaborCamp, which accepts two parameters, name and price.
 	 * @param name
+	 * @param id
 	 * @param price
 	 */
 	public LaborCamp(String name, int id ,int price) {
@@ -23,13 +24,13 @@ public class LaborCamp extends Ownable{
 	public int getRent() {//Overrides the getRent() method from Ownable.
 		int rent=0;
 		if(owner!=null){//if the instance is owned, the rent is calculated.
-			rent=GUIControl.getUserRoll()*baseRent*owner.ownedTypes(this);
+			rent=GUIControl.getUserRoll()*baseRent*owner.ownedTypes(this);//Gets a roll value from the player.
 		}
 		return rent;
 	}
 	
 	@Override
-	public void landOnSquare(Player player){
+	public void landOnSquare(Player player){//implements the method from Ownable.
 		super.landOnSquare(player);
 	}
 }

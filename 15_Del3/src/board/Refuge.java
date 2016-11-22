@@ -10,6 +10,7 @@ public class Refuge extends Square{
 	/**
 	 * Constructor which accepts two parameters name and bonus.
 	 * @param name
+	 * @param id
 	 * @param bonus
 	 */
 	public Refuge(String name, int id ,int bonus) {

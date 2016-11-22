@@ -19,6 +19,7 @@ public class Fleet extends Ownable {
 	/**
 	 * Constructor which takes name and price as parameters.
 	 * @param name
+	 * @param id
 	 * @param price
 	 */
 	public Fleet(String name, int id , int price) {

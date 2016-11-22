@@ -9,6 +9,10 @@ public class Vehicle {
 	private int currentPosition = 0;
 	private int previousPosition = 0;
 	
+	/**
+	 * Constructor that initializes a vehicle with a counter for a player
+	 */
+	
 	public Vehicle() {
 		
 		counter++;
@@ -35,8 +39,6 @@ public class Vehicle {
 	 * Method for setting a new position of the player's vehicle
 	 * @param value
 	 */
-	
-	
 	
 	public void setPosition(int value) {
 		currentPosition = value;
