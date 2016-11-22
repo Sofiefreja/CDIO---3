@@ -16,7 +16,7 @@ public class Vehicle {
 	}
 	
 	/**
-	 * Method for calculating the new position of a player's vehicle
+	 * Method for calculating and returning the new position of a player's vehicle while also saving the previous position
 	 * @param value
 	 * @return The new position of the player's vehicle of the type integer
 	 */
@@ -31,17 +31,39 @@ public class Vehicle {
 		
 	}
 	
+	/**
+	 * Method for setting a new position of the player's vehicle
+	 * @param value
+	 */
+	
+	
+	
 	public void setPosition(int value) {
 		currentPosition = value;
 	}
+	
+	/**
+	 * Method for getting the previous position of a player's vehicle
+	 * @return The previous position of the player vehicle, of the type integer
+	 */
 	
 	public int getPreviousPosition() {
 		return previousPosition;
 	}
 	
+	/**
+	 * Method for getting the current position of a player's vehicle
+	 * @return The current position of the player vehicle, of the type integer
+	 */
+	
 	public int getCurrentPosition() {
 		return currentPosition;
 	}
+	
+	/**
+	 * Method for deciding the color of a player's vehicle, depending on number of players
+	 * @return The color of a player's vehicle of the type color
+	 */
 	
 	public Color getColor() {
 		

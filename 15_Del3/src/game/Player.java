@@ -11,6 +11,11 @@ public class Player {
 	private Vehicle vehicle = new Vehicle();
 	ArrayList<Square> owned = new ArrayList<Square>();
 	
+	/**
+	 * Constructor that initiates a player into hte game
+	 * @param name
+	 */
+	
 	public Player (String name) {
 		this.name = name;
 		balance.deposit(30000);
@@ -36,7 +41,7 @@ public class Player {
 		
 		int counter = 0;
 		
-		for (int i = 0; i <= owned.size(); i++) {
+		for (int i = 0; i < owned.size(); i++) {
 			
 			if (owned.get(i).getClass().equals(square.getClass())) {
 				counter++;
