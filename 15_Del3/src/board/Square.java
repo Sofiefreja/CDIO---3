@@ -7,13 +7,14 @@ import game.Player;
  */
 public abstract class Square {
 	protected String name;
-	
+	protected int id;
 	/**
 	 * Super constructor which takes a String name as a parameter.
 	 * @param name
 	 */
-	public Square( String name){
+	public Square( String name, int id){
 		this.name=name;
+		this.id=id;
 	}
 	/**
 	 * Returns the name of the Square
@@ -21,6 +22,9 @@ public abstract class Square {
 	 */
 	public String toString(){
 		return name;
+	}
+	public int getID(){
+		return id;
 	}
 	/**
 	 * Method which determines what happens to a player when he lands on this instance.

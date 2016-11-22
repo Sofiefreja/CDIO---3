@@ -12,8 +12,8 @@ public class Refuge extends Square{
 	 * @param name
 	 * @param bonus
 	 */
-	public Refuge(String name, int bonus) {
-		super(name);
+	public Refuge(String name, int id ,int bonus) {
+		super(name, id);
 		this.bonus=bonus;
 	}
 	@Override

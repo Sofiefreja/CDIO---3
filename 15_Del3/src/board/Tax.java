@@ -13,8 +13,8 @@ public class Tax extends Square{
 	 * @param name
 	 * @param taxAmount
 	 */
-	public Tax(String name, int taxAmount) {
-		super(name);
+	public Tax(String name,int id, int taxAmount) {
+		super(name,id);
 		this.taxAmount=taxAmount;
 	}
 	/**

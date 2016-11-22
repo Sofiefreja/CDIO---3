@@ -14,8 +14,8 @@ public class LaborCamp extends Ownable{
 	 * @param name
 	 * @param price
 	 */
-	public LaborCamp(String name, int price) {
-		super(name,price);
+	public LaborCamp(String name, int id ,int price) {
+		super(name,id,price);
 	}
 
 	@Override

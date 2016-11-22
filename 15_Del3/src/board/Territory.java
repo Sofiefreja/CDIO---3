@@ -13,8 +13,8 @@ public class Territory extends Ownable {
 	 * @param price
 	 * @param rent
 	 */
-	public Territory(String name, int price, int rent) {
-		super(name, price);
+	public Territory(String name,int id, int price, int rent) {
+		super(name, id ,price);
 		this.rent = rent;
 	}
 

@@ -17,8 +17,8 @@ public abstract class Ownable extends Square {
 	 * @param name
 	 * @param price
 	 */
-	public Ownable(String name, int price){
-		super(name);
+	public Ownable(String name,int id, int price){
+		super(name,id);
 		this.price=price;
 	}
 	/**

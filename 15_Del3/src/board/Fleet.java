@@ -21,8 +21,8 @@ public class Fleet extends Ownable {
 	 * @param name
 	 * @param price
 	 */
-	public Fleet(String name, int price) {
-		super(name, price);
+	public Fleet(String name, int id , int price) {
+		super(name, id , price);
 	}
 	
 	@Override
