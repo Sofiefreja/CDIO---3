@@ -10,6 +10,7 @@ public class Territory extends Ownable {
 	/**
 	 * Constructor for Territory which accepts name, price and rent when owned for this instance.
 	 * @param name
+	 * @param id
 	 * @param price
 	 * @param rent
 	 */

@@ -13,6 +13,7 @@ public class LaborCamp extends Ownable{
 	/**
 	 * Constructor for LaborCamp, which accepts two parameters, name and price.
 	 * @param name
+	 * @param id
 	 * @param price
 	 */
 	public LaborCamp(String name, int id ,int price) {

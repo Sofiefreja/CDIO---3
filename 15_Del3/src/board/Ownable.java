@@ -16,6 +16,7 @@ public abstract class Ownable extends Square {
 	/**
 	 * Constructor which takes a name and a price of the square as parameters.
 	 * @param name
+	 * @param id
 	 * @param price
 	 */
 	public Ownable(String name,int id, int price){

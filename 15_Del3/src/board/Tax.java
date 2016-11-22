@@ -12,6 +12,7 @@ public class Tax extends Square{
 	/**
 	 * Constructor which accepts two parameters name and taxAmount for this specific instance.
 	 * @param name
+	 * @param id
 	 * @param taxAmount
 	 */
 	public Tax(String name,int id, int taxAmount) {
