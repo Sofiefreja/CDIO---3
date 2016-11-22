@@ -2,7 +2,6 @@ package game;
 
 import java.awt.*;
 import java.util.ArrayList;
-
 //import board.*;
 import desktop_fields.*;
 import desktop_fields.Refuge;
