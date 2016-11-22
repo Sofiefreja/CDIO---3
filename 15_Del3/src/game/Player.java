@@ -1,7 +1,7 @@
 package game;
 
 import java.awt.Color;
-import board.*;
+import board.Ownable;
 import java.util.*;
 
 
