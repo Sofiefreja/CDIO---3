@@ -42,7 +42,7 @@ public class Fleet extends Ownable {
 		return 0;  
 	}
 	@Override
-	public void landOnSquare(Player player) {//Implements the inherited landOnSquare for Fleet
+	public void landOnSquare(Player player) {//Implements the inherited landOnSquare for the class Fleet
 		super.landOnSquare(player);
 //		if (owner != null) {
 //			player.pay(getRent());

@@ -7,6 +7,7 @@ package game;
 public class LaborCamp extends Ownable{
 	//baseRent is the factor used in getRent().
 	private int baseRent=100; 
+	
 	/**
 	 * Constructor for LaborCamp, which accepts two parameters, name and price.
 	 * @param name
