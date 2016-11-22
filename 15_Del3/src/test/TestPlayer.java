@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import java.awt.Color;
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -19,15 +20,15 @@ public class TestPlayer {
 		
 		Player p1 = new Player("Simon");
 		
-		Fleet boat = new Fleet("Boat", 2000);
+		Fleet boat = new Fleet("Boat", 4, 2000);
 		
-		Fleet carrier = new Fleet("Carrier", 4000);
+		Fleet carrier = new Fleet("Carrier", 5, 4000);
 		
-		LaborCamp slavepit = new LaborCamp("Slave Pit", 2000);
+		LaborCamp slavepit = new LaborCamp("Slave Pit", 1, 2000);
 		
-		LaborCamp quarry = new LaborCamp("Quarry", 2000);
+		LaborCamp quarry = new LaborCamp("Quarry", 2, 2000);
 		
-		LaborCamp mine = new LaborCamp("Mine", 2000);
+		LaborCamp mine = new LaborCamp("Mine", 3, 2000);
 		
 		assertEquals(p1.toString(),"Simon");
 		
@@ -59,7 +60,7 @@ public class TestPlayer {
 		
 		p1.bought(carrier);
 		
-		assertEquals(p1.owned(boat),2);
+		assertEquals(p1.ownedTypes(boat),2);
 		
 		p1.bought(slavepit);
 		
@@ -67,7 +68,12 @@ public class TestPlayer {
 		
 		p1.bought(mine);
 		
-		assertEquals(p1.owned(mine),3);
+		assertEquals(p1.ownedTypes(mine),3);
+		
+		int[] TestArray = new int[]{4,5,1,2,3};
+		
+		assertEquals(Arrays.toString(p1.ownedID()),Arrays.toString(TestArray));
+
 	}
 
 }
