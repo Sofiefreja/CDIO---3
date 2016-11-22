@@ -10,9 +10,10 @@ import game.FakeDice;
 public class TestDice {
 	@Test
 	public void TC1(){
+		//initialize a FakeDice, extended from Dice,  which always shows 3.
 		int faceValue=3;
 		FakeDice d1 = new FakeDice(faceValue);
-		
+		//Test the methods of FakeDice.
 		assertEquals(d1.roll(),faceValue);
 		assertEquals(d1.getValue(),faceValue);
 	}
