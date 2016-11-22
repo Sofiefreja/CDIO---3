@@ -25,7 +25,6 @@ public class Fleet extends Ownable {
 	public Fleet(String name, int id , int price) {
 		super(name, id , price);
 	}
-	
 	@Override
 	public int getRent() {//Implements the inherited getRent() for Fleet
 		if (owner != null) { //If the owner field is not empty for the current instance, following statement is initiated.
@@ -47,15 +46,5 @@ public class Fleet extends Ownable {
 	@Override
 	public void landOnSquare(Player player) {//Implements the inherited landOnSquare for the class Fleet
 		super.landOnSquare(player);
-//		if (owner != null) {
-//			player.pay(getRent());
-//			owner.deposit(getRent());
-//		} else {
-//			if (GUIControl.MethodForAskingUserIfHeWantsToBuyTheSquare() == true) {
-//				player.bought(this);
-//				player.pay(price);
-//				owner = player;
-//			}
-//		}
 	}
 }

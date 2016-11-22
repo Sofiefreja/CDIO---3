@@ -29,7 +29,7 @@ public abstract class Square {
 	 * @return id
 	 */
 	public int getID(){
-		return id;
+		return this.id;
 	}
 	/**
 	 * Method which determines what happens to a player when he lands on this instance.
