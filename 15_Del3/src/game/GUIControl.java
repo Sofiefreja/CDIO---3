@@ -1,7 +1,9 @@
 package game;
 
 import java.awt.*;
-import board.*;
+
+import board.Square;
+//import board.*;
 import desktop_fields.*;
 import desktop_fields.Refuge;
 import desktop_fields.Tax;
