@@ -1,5 +1,6 @@
 package board;
 import game.Player;
+import game.GUIControl;
 /**
  * Class LaborCamp extended from Ownable.
  * @author Mathias Tværmose Gleerup

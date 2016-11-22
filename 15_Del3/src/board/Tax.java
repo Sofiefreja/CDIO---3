@@ -1,5 +1,6 @@
 package board;
 import game.Player;
+import game.GUIControl;
 /**
  * Class Tax extended from Square.
  * @author Mathias Tværmose Gleerup
@@ -29,9 +30,9 @@ public class Tax extends Square{
 	public void landOnSquare(Player player) {
 		String ask;
 		ask=GUIControl.rateOrAmount(this);
-		if(ask.equals("Rate")){//if the player chose to pay the 10 % tax rate, this is calculated and payed.
+		if(ask.equals("Tax rate")){//if the player chose to pay the 10 % tax rate, this is calculated and payed.
 			player.pay((player.getBalance()/taxRate));
-		}else{ //else the taxAmount for this instance is payed.
+		}else if(ask.equals("Tax Amount")){ //else the taxAmount for this instance is payed.
 			player.pay(taxAmount);
 		}
 	}

@@ -116,7 +116,7 @@ public class GUIControl {
 
 	// Extra roll to determine Labor Camp tax.
 
-	public int getUserRoll() {
+	public static int getUserRoll() {
 		int value = 0;
 		Cup thecup = new Cup();
 
@@ -129,7 +129,7 @@ public class GUIControl {
 	}
 
 	// Player choice of buying a square or not.
-	public boolean getBuyChoice(Ownable field) {
+	public static boolean getBuyChoice(Ownable field) {
 
 		String input = GUI.getUserButtonPressed("Buy " + field.toString() + ":", "Yes", "No");
 		if (input.equals("Yes"))
@@ -140,7 +140,7 @@ public class GUIControl {
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
 	
-	public String rateOrAmount(Tax theTax){
+	public static String rateOrAmount(Tax theTax){
 		
 		String TaxAmount = String.valueOf(theTax.getTaxAmount());
 		String output=null;
