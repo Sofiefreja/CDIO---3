@@ -47,6 +47,7 @@ public abstract class Ownable extends Square {
 				player.bought(this);
 				player.pay(price);
 				owner = player;
+				GUIControl.setOwned(this.getID(),player);
 			}
 		}
 	}

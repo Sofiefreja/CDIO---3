@@ -11,10 +11,10 @@ public class Fleet extends Ownable {
 	/*
 	 * integers RENT_#
 	 */
-	private int RENT_1 = 500;
-	private int RENT_2 = 1000;
-	private int RENT_3 = 2000;
-	private int RENT_4 = 4000;
+	private final int RENT_1 = 500;
+	private final int RENT_2 = 1000;
+	private final int RENT_3 = 2000;
+	private final int RENT_4 = 4000;
 	
 	/**
 	 * Constructor which takes name and price as parameters.
