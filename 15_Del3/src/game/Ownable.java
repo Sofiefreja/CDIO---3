@@ -34,7 +34,7 @@ public abstract class Ownable extends Square {
 			player.pay(getRent());
 			owner.deposit(getRent());
 		} else {
-			if (GUIControl.MethodForAskingUserIfHeWantsToBuyTheSquare() == true) {
+			if (GUIControl.getBuyChoice(this) == true) {
 				player.bought(this);
 				player.pay(price);
 				owner = player;

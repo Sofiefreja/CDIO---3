@@ -15,6 +15,13 @@ public abstract class Square {
 		this.name=name;
 	}
 	/**
+	 * Returns the name of the Square
+	 * @return name
+	 */
+	public String toString(){
+		return name;
+	}
+	/**
 	 * Method which determines what happens to a player when he lands on this instance.
 	 * @param player
 	 */
