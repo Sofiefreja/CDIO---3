@@ -1,5 +1,9 @@
 package game;
-
+/**
+ * Class Cup, for operating two Dice at once.
+ * @author Mathias Tværmose Gleerup
+ *
+ */
 public class Cup {
 	private Dice d1 = new Dice(); //initiating dices to use in the cup.
 	private Dice d2 = new Dice();

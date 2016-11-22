@@ -1,8 +1,12 @@
 package game;
-
+/**
+ * Class Tax extended from Square.
+ * @author Mathias Tværmose Gleerup
+ *
+ */
 public class Tax extends Square{
-	int taxAmount; //amount defined in constructor
-	int taxRate=10; //rate 
+	private int taxAmount; //amount defined in constructor
+	private int taxRate=10; //rate 
 	/**
 	 * Constructor which accepts two parameters name and taxAmount for this specific instance.
 	 * @param name

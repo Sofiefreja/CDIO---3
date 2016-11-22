@@ -1,6 +1,6 @@
 package game;
 /**
- * Abstract class Square, superclass for all Squares.
+ * Abstract class Square, superclass to all Squares.
  * @author Mathias Tværmose Gleerup
  *
  */
