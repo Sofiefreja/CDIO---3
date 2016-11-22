@@ -1,8 +1,15 @@
 package game;
 import board.*;
 public class Board {
+	/* Class, to initialize the board and the square. 
+	 * Author: Sofie Freja Christensen
+	 */
 	Square[] squares = new Square[21];
 	public Board(){
+	/*
+	 * An array of the type square. In these indexes, It's defined which type
+	 * of square it is, and prices and rents of the different squares.  
+	 */
 	squares[0] = new Territory("Tribe Encampment", 1000, 100);
 	squares[1] = new Fleet("Second Sail", 4000);
 	squares[2] = new Territory("Crater", 1500, 300);
@@ -25,6 +32,9 @@ public class Board {
 	squares[19] = new Territory("Tower", 6000, 3200);
 	squares[20] = new Territory("Castle", 8000, 4000);
 	}
+	/*
+	 * Method to retrieve information, from one specific square.
+	 */
 	public Square getSquare(int ren) {
 		return squares[ren];
 	}
