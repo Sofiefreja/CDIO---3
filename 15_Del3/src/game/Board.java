@@ -1,9 +1,10 @@
 package game;
 import java.util.*;
+import board.*;
 public class Board {
 	protected int[] Square;
 		
-	public int[] getSquare(int rent, int price) {
+	public ArrayList<Square> getSquare(int rent, int price) {
 		ArrayList<Square> squares = new ArrayList<Square>();
 		Territory Tribeenchampment = new Territory("Tribe Encampment", price = 1000, rent = 100);
 		squares.add(Tribeenchampment);
@@ -14,7 +15,7 @@ public class Board {
 		Refuge WalledCity = new Refuge("Walled city", 5000);
 		squares.add(WalledCity);
 		LaborCamp HutsitM = new LaborCamp("Huts in the mountain", 2500);
-		squares.addAll(HutsitM);
+		squares.add(HutsitM);
 		Territory Mountain = new Territory("Mountain", price = 2000, rent = 500);
 		squares.add(Mountain);
 		Fleet SeaGrover = new Fleet("Sea Grover", price = 4000);
@@ -36,7 +37,7 @@ public class Board {
 		Refuge Monastery = new Refuge("Monastery", 500);
 		squares.add(Monastery);
 		LaborCamp Pit = new LaborCamp("The pit", 2500);
-		squares.addAll(Pit);
+		squares.add(Pit);
 		Territory PalaceGates = new Territory("Palace Gates", price = 5500, rent = 2600);
 		squares.add(PalaceGates);
 		Fleet PrivateerArmada = new Fleet("Privateer armada", price = 4000);
@@ -47,6 +48,6 @@ public class Board {
 		squares.add(Tower);
 		Territory Castle = new Territory("Castle", price = 8000, rent = 4000);
 		squares.add(Castle);
-	return Square;
+	return squares;
 	}
 }
