@@ -1,5 +1,4 @@
 package game;
-import java.util.*;
 import board.*;
 public class Board {
 	Square[] squares = new Square[21];
