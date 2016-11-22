@@ -6,9 +6,9 @@ import java.awt.Color;
 
 import org.junit.Test;
 
-import game.Fleet;
+import board.Fleet;
 
-import game.LaborCamp;
+import board.LaborCamp;
 
 import game.Player;
 

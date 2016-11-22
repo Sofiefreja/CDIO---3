@@ -1,8 +1,9 @@
 package game;
 
 import java.awt.Color;
-
+import board.*;
 import java.util.*;
+
 
 public class Player {
 

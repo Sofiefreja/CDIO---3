@@ -1,10 +1,12 @@
 package game;
 
 import java.awt.*;
+import board.*;
 import desktop_fields.*;
+import desktop_fields.Refuge;
+import desktop_fields.Tax;
 import desktop_codebehind.*;
 import desktop_resources.GUI;
-import desktop_resources.GUI.*;
 
 
 public class GUIControl {
