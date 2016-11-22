@@ -14,14 +14,14 @@ public class Player {
 	ArrayList<Ownable> owned = new ArrayList<Ownable>();
 	
 	/**
-	 * Constructor that initiates a player into hte game
+	 * Constructor that initializes a player into the game with a name, an account balance of 30000, a vehicle with a color and an ArrayList of owned squares
 	 * @param name
 	 */
 	
 	public Player (String name) {
 		this.name = name;
 		balance.deposit(30000);
-		// Car car = new Car.Builder().typeUfo().primaryColor(getColor()).build(); Skal bruges i GUIControl for createPlayer()
+
 	}
 	
 	/**
@@ -54,6 +54,11 @@ public class Player {
 		
 		return counter;
 	}
+	
+	/**
+	 * Method for determining the square IDs of the squares a player owns
+	 * @return An integer array with the square IDs
+	 */
 	
 	public int[] ownedID() {
 		

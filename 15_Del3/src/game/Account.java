@@ -4,6 +4,10 @@ public class Account {
 	
 	private int balance;
 	
+	/**
+	 * Constructor the initializes the player's account with a balance of 0
+	 */
+	
 	public Account() {
 		balance = 0;
 	}
