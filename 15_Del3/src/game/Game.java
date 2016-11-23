@@ -41,7 +41,7 @@ public class Game {
 		int turnNumber = 1;
 		int numberOfPlayers = playerNames.length;
 		
-		while (true) { // The game should run until one
+		while (thePlayers.size()>1) { // The game should run until one
 						// player remains in the ArrayList.
 			
 			for (int i = 0; i < thePlayers.size(); i++) { // The for loop
@@ -97,9 +97,10 @@ public class Game {
 
 				}
 				
+				
 			}
 		}
-
+		GUIGame.showWinner(thePlayers.get(0));
 	}
 }
 
