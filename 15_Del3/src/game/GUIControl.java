@@ -88,8 +88,9 @@ public class GUIControl {
 		int numberOfPlayers = GUI.getUserInteger("How many players are you? (between 2-6)", 2, 6);
 		String[] playerNames = new String[numberOfPlayers];
 		for (int i = 0; i < numberOfPlayers; i++) {
-			int number= i+1; // The Array[] have to start at index 0, but the player is number 1.
-			playerNames[i] = GUI.getUserString("Player "+String.valueOf(number));
+			int number = i + 1; // The Array[] have to start at index 0, but the
+								// player is number 1.
+			playerNames[i] = GUI.getUserString("Player " + String.valueOf(number));
 		}
 		return playerNames;
 	}
@@ -104,8 +105,10 @@ public class GUIControl {
 
 	// Move vehicle on the board.
 	public void moveVehicle(Player thePlayer) {
-		thePlayer.getPreviousPosition();
+		// thePlayer.getPreviousPosition();
+		// if(thePlayer.getCurrentPosition()!=0){
 		GUI.removeCar(thePlayer.getPreviousPosition(), thePlayer.toString());
+		// }
 		GUI.setCar(thePlayer.getCurrentPosition(), thePlayer.toString());
 
 	}
@@ -135,46 +138,47 @@ public class GUIControl {
 	}
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
-	
-	public static String rateOrAmount(Tax theTax){
-		
+
+	public static String rateOrAmount(Tax theTax) {
+
 		String TaxAmount = String.valueOf(theTax.getTaxAmount());
-		String output=null;
-		
-		
-		String input = GUI.getUserButtonPressed("You landed on a tax, you have two options: ", "Tax rate 10 %", "Tax Amount "+TaxAmount);
+		String output = null;
+
+		String input = GUI.getUserButtonPressed("You landed on a tax, you have two options: ", "Tax rate 10 %",
+				"Tax Amount " + TaxAmount);
 		if (input.equals("Tax rate 10 %"))
 			output = "Tax rate";
-		else if(input.equals("Tax Amount "+TaxAmount))
-	    	output = "Tax Amount";
+		else if (input.equals("Tax Amount " + TaxAmount))
+			output = "Tax Amount";
 
 		return output;
 	}
-	
+
 	// Removing player from playing board when player surrenders or looses.
-	public void removePlayer(Player thePlayer){
-		
-		
+	public void removePlayer(Player thePlayer) {
+
 		// Remove the players owned squares.
 		int[] list = thePlayer.ownedID();
-		
-		for (int i = 0; i < list.length; i++){
-		GUI.removeOwner(list[i]);
+
+		for (int i = 0; i < list.length; i++) {
+			GUI.removeOwner(list[i]);
 		}
-		
-		//Remove Car 
+
+		// Remove Car
 		GUI.removeCar(thePlayer.getCurrentPosition(), thePlayer.toString());
-		
-		
+
 	}
-	
+
 	// set square as owned.
-	public static void setOwned(int squareNumber,Player thePlayer){
-		
+	public static void setOwned(int squareNumber, Player thePlayer) {
+
 		GUI.setOwner(squareNumber, thePlayer.toString());
 	}
-	
-		
-	
+
+	//// Move vehicle on the board the first time.
+	public void moveVehicleFirstTime(Player thePlayer) {
+		GUI.setCar(thePlayer.getCurrentPosition(), thePlayer.toString());
+
+	}
 
 }
