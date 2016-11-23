@@ -63,10 +63,6 @@ public class GUIControl {
 		GUI.create(fields);
 	}
 
-	// public void showSquareInfo(Square theSquare) {
-	//
-	// }
-
 	public void showWinner(Player winner) {
 		GUI.showMessage("Congratulations " + winner + "! " + "You are the winner!");
 	}
@@ -91,8 +87,9 @@ public class GUIControl {
 	public String[] numberOfPlayers() {
 		int numberOfPlayers = GUI.getUserInteger("How many players are you? (between 2-6)", 2, 6);
 		String[] playerNames = new String[numberOfPlayers];
-		for (int i = 1; i <= numberOfPlayers; i++) {
-			playerNames[i] = GUI.getUserString(" Player " + i);
+		for (int i = 0; i < numberOfPlayers; i++) {
+			int number= i+1; // The Array[] have to start at index 0, but the player is number 1.
+			playerNames[i] = GUI.getUserString("Player "+String.valueOf(number));
 		}
 		return playerNames;
 	}
