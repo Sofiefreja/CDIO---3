@@ -6,8 +6,8 @@ public class Vehicle {
 
 	Color carColor = null;
 	static int counter = 0;
-	private int currentPosition = 0;
-	private int previousPosition = 0;
+	private int currentPosition = 1;
+	private int previousPosition = 1;
 	
 	/**
 	 * Constructor that initializes a vehicle with a counter for a player
@@ -42,7 +42,7 @@ public class Vehicle {
 	
 	public void setPosition(int value) {
 		currentPosition = value;
-		//previousPosition = value;
+		previousPosition = value;
 		
 	}
 	

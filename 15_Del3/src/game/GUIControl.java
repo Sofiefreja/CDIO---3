@@ -107,9 +107,9 @@ public class GUIControl {
 	public void moveVehicle(Player thePlayer) {
 		// thePlayer.getPreviousPosition();
 		// if(thePlayer.getCurrentPosition()!=0){
-		GUI.removeCar(thePlayer.getPreviousPosition(), thePlayer.toString());
+		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
 		// }
-		GUI.setCar(thePlayer.getCurrentPosition(), thePlayer.toString());
+		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
 
 	}
 
@@ -119,7 +119,7 @@ public class GUIControl {
 		int value = 0;
 		Cup thecup = new Cup();
 
-		String input = GUI.getUserButtonPressed("You landed on a labor camp, to determine your punishment: ", "Roll");
+		String input = GUI.getUserButtonPressed("You landed on a labor camp, roll to determine your punishment: ", "Roll");
 
 		if (input.equals("Roll"))
 			value = thecup.roll();
@@ -130,7 +130,7 @@ public class GUIControl {
 	// Player choice of buying a square or not.
 	public static boolean getBuyChoice(Ownable field) {
 
-		String input = GUI.getUserButtonPressed("Buy " + field.toString() + ":", "Yes", "No");
+		String input = GUI.getUserButtonPressed("Do you want to buy " + field.toString() + "?", "Yes", "No");
 		if (input.equals("Yes"))
 			return true;
 		else

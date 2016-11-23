@@ -7,5 +7,4 @@ public class StartGame {
 		// TODO Auto-generated method stub
 	Game g = new Game();
 	}
-
 }

@@ -61,7 +61,7 @@ public class Game {
 					if (firstTurn == true) {
 						System.out.println("Første runde: " +firstTurn);
 						thePlayers.get(i).setPosition(theCup.getSum());
-						GUIGame.moveVehicleFirstTime(thePlayers.get(i));
+						GUIGame.moveVehicle(thePlayers.get(i));
 						firstRound++;
 						if(firstRound==numberOfPlayers){
 							firstTurn=false;
