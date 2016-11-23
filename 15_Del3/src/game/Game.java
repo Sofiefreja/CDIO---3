@@ -38,10 +38,12 @@ public class Game {
 		/*
 		 * en while loop. Beginning the game.
 		 */
-		int turnNumber = 1;
+		boolean firstTurn = true;
+		int firstRound = 0;
 		int numberOfPlayers = playerNames.length;
 		
-		while (thePlayers.size()>1) { // The game should run until one
+
+		while (thePlayers.size()>1){ // The game should run until one
 						// player remains in the ArrayList.
 			
 			for (int i = 0; i < thePlayers.size(); i++) { // The for loop
@@ -55,49 +57,33 @@ public class Game {
 				if (turn.equals("Roll")) {
 					theCup.roll();
 					GUIGame.showDice(theCup);
-
 					// Move the Vehicle on board.
-
-					if (turnNumber <= numberOfPlayers) {
-						// De står der kun som hjælp, så man kan se hvad der sker
-						System.out.println("turnNumber: " +turnNumber);
-						System.out.println("If statemanet hvor turnnumber<=2");
+					if (firstTurn == true) {
+						System.out.println("Første runde: " +firstTurn);
 						thePlayers.get(i).setPosition(theCup.getSum());
 						GUIGame.moveVehicleFirstTime(thePlayers.get(i));
-						turnNumber++;
-						System.out.println("turnNumber++: " +turnNumber);
+						firstRound++;
+						if(firstRound==numberOfPlayers){
+							firstTurn=false;
+							System.out.println("Første runde er overstået");
+						}
 					} else {
-						// De står der kun som hjælp, så man kan se hvad der sker
-						System.out.println("If statemanet hvor turnnumber større end 2");
-						System.out.println();
-						System.out.println("Player "+thePlayers.get(i).toString() + " Position: Current = " + thePlayers.get(i).getCurrentPosition()
-								+ " Previous = " + thePlayers.get(i).getPreviousPosition());
 						thePlayers.get(i).moveCar(theCup.getSum());
 						GUIGame.moveVehicle(thePlayers.get(i));
-						System.out.println();
-						System.out.println();
-						System.out.println("After code has been runned. Player "+thePlayers.get(i).toString() + " Position: Current = " + thePlayers.get(i).getCurrentPosition()
-						+ " Previous = " + thePlayers.get(i).getPreviousPosition());
-						System.out.println();
-						System.out.println();
-						System.out.println("Hvad er spillerens balance" + thePlayers.get(i).getBalance());
 					}
-
 					// Call the landOnSquare(Player --- )
 					int newPosition = thePlayers.get(i).getCurrentPosition();
-					Square currentSquare = theBoard.getSquare(newPosition);
-					currentSquare.landOnSquare(thePlayers.get(i));
-
+					theBoard.getSquare(newPosition).landOnSquare(thePlayers.get(i));
+					if(thePlayers.get(i).getBalance()<0){
+						GUIGame.removePlayer(thePlayers.get(i));
+						thePlayers.remove(i);
+						thePlayers.trimToSize();
+					}
 				} else if (turn.equals("Surrender")) {
 					GUIGame.removePlayer(thePlayers.get(i));
 					thePlayers.remove(i);
 					thePlayers.trimToSize();
-				} else {
-					System.out.println("Der er sket en fejl bro");
-
 				}
-				
-				
 			}
 		}
 		GUIGame.showWinner(thePlayers.get(0));
