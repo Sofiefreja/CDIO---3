@@ -42,12 +42,16 @@ public class Game {
 		int firstRound = 0;
 		int numberOfPlayers = playerNames.length;
 
-		while (thePlayers.size() > 1) { // The game should run until one player remains in the ArrayList.
+		while (thePlayers.size() > 1) { // The game should run until one player
+										// remains in the ArrayList.
 
-			for (int i = 0; i < thePlayers.size(); i++) { // The // for loop running through all the players.
-				
-				
-				if (thePlayers.size() != 1) { // If only one player are left, then 'else' runs and breaks the for loop.
+			for (int i = 0; i < thePlayers.size(); i++) { // The // for loop
+															// running through
+															// all the players.
+
+				if (thePlayers.size() != 1) { // If only one player are left,
+												// then 'else' runs and breaks
+												// the for loop.
 
 					String turn = GUIGame.getUserInputTurn(thePlayers.get(i)); // Ask
 					// what the player what to do.
@@ -55,18 +59,16 @@ public class Game {
 					if (turn.equals("Roll")) {
 						theCup.roll();
 						GUIGame.showDice(theCup);
-						
+
 						// Move the Vehicle on board.
 						if (firstTurn == true) {
-							System.out.println("Første runde: " + firstTurn);
 							thePlayers.get(i).setPosition(theCup.getSum());
 							GUIGame.moveVehicle(thePlayers.get(i));
 							firstRound++;
-							
+
 							// First turn
 							if (firstRound == numberOfPlayers) {
 								firstTurn = false;
-								System.out.println("Første runde er overstået");
 							}
 
 						} else { // A normal turn.
@@ -74,7 +76,7 @@ public class Game {
 							GUIGame.moveVehicle(thePlayers.get(i));
 
 						}
-						// Call the landOnSquare(Player --- ) 
+						// Call the landOnSquare(Player --- )
 						int newPosition = thePlayers.get(i).getCurrentPosition();
 						theBoard.getSquare(newPosition).landOnSquare(thePlayers.get(i));
 						if (thePlayers.get(i).getBalance() < 0) {
@@ -82,7 +84,7 @@ public class Game {
 							thePlayers.remove(i);
 							i--;
 
-						} 
+						}
 						// The player Surrenders.
 					} else if (turn.equals("Surrender")) {
 						GUIGame.removePlayer(thePlayers.get(i));
@@ -97,7 +99,6 @@ public class Game {
 
 		}
 		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
+		GUIGame.endGUI();
 	}
 }
-
-

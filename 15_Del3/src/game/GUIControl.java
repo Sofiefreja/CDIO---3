@@ -124,10 +124,10 @@ public class GUIControl {
 	public static int getUserRoll(LaborCamp camp) {
 		int value = 0;
 		Cup thecup = new Cup();
-		GUI.showMessage("You landed on "+camp.toString()+ ". You roll to determine the rent you need to pay.");
+		//GUI.showMessage("You landed on "+camp.toString()+ ". You roll to determine the rent you need to pay.");
 		value = thecup.roll();
 		GUI.setDice(thecup.getD1(),thecup.getD2());
-		GUI.showMessage("You rolled: "+value);
+		//GUI.showMessage("You rolled: "+value);
 		return value;
 	}
 
@@ -195,6 +195,12 @@ public class GUIControl {
 	}
 	public static void refugeMessage(Refuge refuge, Player player, int bonus){
 		GUI.showMessage(player.toString()+", you landed on the Refuge "+refuge.toString()+". You are awarded a bonus of: "+bonus+"£");
+	}
+	public static void selfOwned(){
+		GUI.showMessage("You already own this square!");
+	}
+	public static void notEnoughMoney(Ownable own){
+		GUI.showMessage("Whoa there, you don't have enough money to buy "+own.toString());
 	}
 	public void endGUI(){
 		GUI.close();
