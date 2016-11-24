@@ -37,7 +37,6 @@ public class Tax extends Square {
 
 	@Override
 	public void landOnSquare(Player player) {
-		
 		if (player.getBalance() > taxAmount) {
 			String ask;
 			ask = GUIControl.rateOrAmount(this, player);// Asks the player
@@ -58,7 +57,7 @@ public class Tax extends Square {
 				GUIControl.updateBalance(player);
 			}
 		} else {
-			GUIControl.taxNotEnough(this);
+			GUIControl.taxNotEnoughMoney(this);
 			int pay = player.getBalance()/taxRate;
 			player.pay(pay);
 			GUIControl.updateBalance(player);

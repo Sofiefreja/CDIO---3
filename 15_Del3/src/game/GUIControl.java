@@ -202,8 +202,8 @@ public class GUIControl {
 	public static void notEnoughMoney(Ownable own){
 		GUI.showMessage("Whoa there, you don't have enough money to buy "+own.toString());
 	}
-	public static void taxNotEnough(Tax tax){
-		GUI.showMessage("You don't have enough money to pay the tax amount of "+tax.getTaxAmount()+" so you have to pay the 10% tax rate.");
+	public static void taxNotEnoughMoney(Tax tax){
+		GUI.showMessage("You don't have enough money to pay the tax amount of "+tax.getTaxAmount()+", so you have to pay the 10% tax rate.");
 	}
 	public void endGUI(){
 		GUI.close();
