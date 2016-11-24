@@ -16,7 +16,7 @@ public class Vehicle {
 	public Vehicle() {
 		
 		counter++;
-		
+		carColor=getColor();
 	}
 	
 	/**
