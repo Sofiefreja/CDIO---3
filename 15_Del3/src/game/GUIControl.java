@@ -28,7 +28,7 @@ public class GUIControl {
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[3] = new Street.Builder().setTitle("Walled City").setDescription("Refuge").setSubText("Reward: 5000")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^camps owned")
+		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes * 100 * Camps owned")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[5] = new Street.Builder().setTitle("Mountain").setDescription("Territory").setSubText("Price: 2000").setRent("Rent: 500")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
@@ -50,7 +50,7 @@ public class GUIControl {
 				.setRent("2000").setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[14] = new Street.Builder().setTitle("Monestary").setDescription("Refuge").setSubText("Reward: 500")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[15] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes*100*camps owned")
+		fields[15] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes * 100 * Camps owned")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[16] = new Street.Builder().setTitle("Palace Gates").setDescription("Territory").setSubText("Price: 5500").setRent("Rent: 2600")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
