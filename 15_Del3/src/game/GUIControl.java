@@ -28,7 +28,7 @@ public class GUIControl {
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[3] = new Street.Builder().setTitle("Walled City").setDescription("Refuge").setSubText("Reward: 5000")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^labor camps owned"
+		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^labor camps owned")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[5] = new Street.Builder().setTitle("Mountain").setDescription("Territory").setSubText("Price: 2000").setRent("Rent: 500")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
