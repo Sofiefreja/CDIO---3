@@ -29,6 +29,9 @@ public abstract class Ownable extends Square {
 	 */
 	public abstract int getRent();
 	
+	public int getPrice(){
+		return price;
+	}
 	/**
 	 * Method for clearing the owner field in this instance.
 	 */
@@ -47,8 +50,8 @@ public abstract class Ownable extends Square {
 			GUIControl.updateBalance(player);
 			GUIControl.updateBalance(owner);
 		} else {
-			if (GUIControl.getBuyChoice(this,this.price) == true) { //asks the player whether he wants to buy the square the player landed on or not.
-				GUIControl.buyMessage(this, player, price);
+			if (GUIControl.getBuyChoice(this,player) == true) { //asks the player whether he wants to buy the square the player landed on or not.
+				GUIControl.buyMessage(this, player);
 				player.bought(this);
 				player.pay(this.price);
 				owner = player;

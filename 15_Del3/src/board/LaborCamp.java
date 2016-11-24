@@ -24,7 +24,7 @@ public class LaborCamp extends Ownable{
 	public int getRent() {//Overrides the getRent() method from Ownable.
 		int rent=0;
 		if(owner!=null){//if the instance is owned, the rent is calculated.
-			rent=GUIControl.getUserRoll()*baseRent*owner.ownedTypes(this);//Gets a roll value from the player.
+			rent=GUIControl.getUserRoll(this)*baseRent*owner.ownedTypes(this);//Gets a roll value from the player.
 		}
 		return rent;
 	}

@@ -4,12 +4,14 @@ import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
 import desktop_fields.*;
-import desktop_fields.Refuge;
+//import desktop_fields.Refuge;
 //import desktop_fields.Tax;
 import desktop_codebehind.*;
 import desktop_resources.GUI;
+import board.LaborCamp;
 import board.Ownable;
 import board.Tax;
+import board.Refuge;
 
 public class GUIControl {
 
@@ -112,22 +114,17 @@ public class GUIControl {
 
 	// Move vehicle on the board.
 	public void moveVehicle(Player thePlayer) {
-		// thePlayer.getPreviousPosition();
-		// if(thePlayer.getCurrentPosition()!=0){
 		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
-		// }
 		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
 
 	}
 
 	// Extra roll to determine Labor Camp tax.
 
-	public static int getUserRoll() {
+	public static int getUserRoll(LaborCamp camp) {
 		int value = 0;
 		Cup thecup = new Cup();
-		//String input = GUI.getUserButtonPressed("You landed on a labor camp, roll to determine your punishment: ", "Roll");
-		//GUI.getUserButtonPressed("You landed on a labor camp, roll to determine your punishment: ", "Roll").equals("Roll");
-		GUI.showMessage("You landed on a Labor Camp. You roll to determine the rent you need to pay.");
+		GUI.showMessage("You landed on "+camp.toString()+ ". You roll to determine the rent you need to pay.");
 		value = thecup.roll();
 		GUI.setDice(thecup.getD1(),thecup.getD2());
 		GUI.showMessage("You rolled: "+value);
@@ -135,9 +132,10 @@ public class GUIControl {
 	}
 
 	// Player choice of buying a square or not.
-	public static boolean getBuyChoice(Ownable field, int price) {
+	public static boolean getBuyChoice(Ownable field, Player player) {
 
-		String input = GUI.getUserButtonPressed("Do you want to buy " + field.toString() + " for "+price+"?", "Yes", "No");
+		String input = GUI.getUserButtonPressed(player.toString()+", you landed on"+field.toString()+
+		".\nDo you want to buy " + field.toString() + " for "+field.getPrice()+"£?", "Yes", "No");
 		if (input.equals("Yes"))
 			return true;
 		else
@@ -146,16 +144,16 @@ public class GUIControl {
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
 
-	public static String rateOrAmount(Tax theTax) {
+	public static String rateOrAmount(Tax theTax, Player player) {
 
 		String TaxAmount = String.valueOf(theTax.getTaxAmount());
 		String output = null;
 
-		String input = GUI.getUserButtonPressed("You landed on "+theTax.toString()+", you have two options: ", "Tax rate 10 %",
-				"Tax Amount " + TaxAmount);
+		String input = GUI.getUserButtonPressed(player.toString()+", you landed on "+theTax.toString()+", you have two options: ", "Tax rate 10 %",
+				"Tax Amount " + TaxAmount+"£");
 		if (input.equals("Tax rate 10 %"))
 			output = "Tax rate";
-		else if (input.equals("Tax Amount " + TaxAmount))
+		else if (input.equals("Tax Amount " + TaxAmount+"£"))
 			output = "Tax Amount";
 
 		return output;
@@ -189,14 +187,17 @@ public class GUIControl {
 		GUI.showMessage(landed.toString()+", you landed on "+field.toString()+", which is owned by "+owner.toString()+".\n"
 				+"You pay " +payment+"£ to "+owner.toString());
 	}
-	public static void buyMessage(Ownable field, Player player,int price){
-		GUI.showMessage("Congratulations! You have bought "+field.toString()+"! You pay "+price);
+	public static void buyMessage(Ownable field, Player player){
+		GUI.showMessage("Congratulations! You have bought "+field.toString()+"! You pay "+field.getPrice()+"£");
 	}
 	public static void taxMessage(Player player, int amount){
-		GUI.showMessage(player.toString()+" payed "+amount);
+		GUI.showMessage(player.toString()+" payed "+amount+"£");
 	}
-	public static void refugeMessage(board.Refuge refuge, Player player, int bonus){
-		GUI.showMessage(player.toString()+", you landed on the Refuge "+refuge.toString()+". You are awarded a bonus of: "+bonus);
+	public static void refugeMessage(Refuge refuge, Player player, int bonus){
+		GUI.showMessage(player.toString()+", you landed on the Refuge "+refuge.toString()+". You are awarded a bonus of: "+bonus+"£");
+	}
+	public void endGUI(){
+		GUI.close();
 	}
 
 }
