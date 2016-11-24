@@ -36,58 +36,75 @@ public class Game {
 		}
 
 		/*
-		 * en while loop. Beginning the game.
+		 * Beginning the game.
 		 */
 		boolean firstTurn = true;
 		int firstRound = 0;
 		int numberOfPlayers = playerNames.length;
-		
 
-		while (thePlayers.size()>1){ // The game should run until one
-						// player remains in the ArrayList.
-			
-			for (int i = 0; i < thePlayers.size(); i++) { // The for loop
+		while (thePlayers.size() > 1) { // The game should run until one
+										// player remains in the ArrayList.
+
+			for (int i = 0; i < thePlayers.size(); i++) { // The //
+															// for
+															// //
+															// loop
+															// //
 															// running
-															// through all the
-															// players.
+				// through all the
+				// players.
+				System.out.println(thePlayers.size());
+				if (thePlayers.size() != 1) {
 
-				String turn = GUIGame.getUserInputTurn(thePlayers.get(i)); // Ask
-				// what the player what to do.
+					System.out.println();
+					System.out.println();
+					System.out.println(thePlayers.size());
 
-				if (turn.equals("Roll")) {
-					theCup.roll();
-					GUIGame.showDice(theCup);
-					// Move the Vehicle on board.
-					if (firstTurn == true) {
-						System.out.println("Første runde: " +firstTurn);
-						thePlayers.get(i).setPosition(theCup.getSum());
-						GUIGame.moveVehicle(thePlayers.get(i));
-						firstRound++;
-						if(firstRound==numberOfPlayers){
-							firstTurn=false;
-							System.out.println("Første runde er overstået");
+					String turn = GUIGame.getUserInputTurn(thePlayers.get(i)); // Ask
+					// what the player what to do.
+
+					if (turn.equals("Roll")) {
+						theCup.roll();
+						GUIGame.showDice(theCup);
+						// Move the Vehicle on board.
+						if (firstTurn == true) {
+							System.out.println("Første runde: " + firstTurn);
+							thePlayers.get(i).setPosition(theCup.getSum());
+							GUIGame.moveVehicle(thePlayers.get(i));
+							firstRound++;
+							if (firstRound == numberOfPlayers) {
+								firstTurn = false;
+								System.out.println("Første runde er overstået");
+							}
+
+						} else {
+							thePlayers.get(i).moveCar(theCup.getSum());
+							GUIGame.moveVehicle(thePlayers.get(i));
+
 						}
-					} else {
-						thePlayers.get(i).moveCar(theCup.getSum());
-						GUIGame.moveVehicle(thePlayers.get(i));
-					}
-					// Call the landOnSquare(Player --- )
-					int newPosition = thePlayers.get(i).getCurrentPosition();
-					theBoard.getSquare(newPosition).landOnSquare(thePlayers.get(i));
-					if(thePlayers.get(i).getBalance()<0){
+						// Call the landOnSquare(Player --- )
+						int newPosition = thePlayers.get(i).getCurrentPosition();
+						theBoard.getSquare(newPosition).landOnSquare(thePlayers.get(i));
+						if (thePlayers.get(i).getBalance() < 0) {
+							GUIGame.removePlayer(thePlayers.get(i));
+							thePlayers.remove(i);
+							i--;
+
+						}
+					} else if (turn.equals("Surrender")) {
 						GUIGame.removePlayer(thePlayers.get(i));
 						thePlayers.remove(i);
-						thePlayers.trimToSize();
+						i--;
+
 					}
-				} else if (turn.equals("Surrender")) {
-					GUIGame.removePlayer(thePlayers.get(i));
-					thePlayers.remove(i);
-					thePlayers.trimToSize();
+				} else {
+					break;
 				}
 			}
+
 		}
 		GUIGame.showWinner(thePlayers.get(0));
 	}
 }
 
-// thePlayers.toString();
+
