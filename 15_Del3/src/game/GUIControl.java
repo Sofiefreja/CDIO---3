@@ -175,10 +175,4 @@ public class GUIControl {
 		GUI.setOwner(squareNumber, thePlayer.toString());
 	}
 
-	//// Move vehicle on the board the first time.
-	public void moveVehicleFirstTime(Player thePlayer) {
-		GUI.setCar(thePlayer.getCurrentPosition(), thePlayer.toString());
-
-	}
-
 }
