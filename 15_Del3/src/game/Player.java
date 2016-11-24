@@ -13,11 +13,18 @@ public class Player {
 	private Vehicle vehicle;
 	ArrayList<Ownable> owned = new ArrayList<Ownable>();
 	
+	
+	public Player(String name, int balance){
+		this.name=name;
+		this.balance.deposit(balance);
+		vehicle=new Vehicle();
+		
+	}
+	
 	/**
 	 * Constructor that initializes a player into the game with a name, an account balance of 30000, a vehicle with a color and an ArrayList of owned squares
 	 * @param name
 	 */
-	
 	public Player (String name) {
 		this.name = name;
 		balance.deposit(30000);
