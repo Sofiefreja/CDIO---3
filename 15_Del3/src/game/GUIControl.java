@@ -134,7 +134,7 @@ public class GUIControl {
 	// Player choice of buying a square or not.
 	public static boolean getBuyChoice(Ownable field, Player player) {
 
-		String input = GUI.getUserButtonPressed(player.toString()+", you landed on"+field.toString()+
+		String input = GUI.getUserButtonPressed(player.toString()+", you landed on "+field.toString()+
 		".\nDo you want to buy " + field.toString() + " for "+field.getPrice()+"£?", "Yes", "No");
 		if (input.equals("Yes"))
 			return true;
