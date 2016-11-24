@@ -17,53 +17,55 @@ public class GUIControl {
 	public void makeBoard() { // Method that creates the board for the GUI and
 								// sets the squares with their descriptions,
 								// colouring and number
-		// terr = white, ref = yellow, fleet = blue, tax = red, labor = green.
+		// terr = white, ref = green, fleet = blue, tax = red, labor = yellow.
 		Field[] fields = new Field[21];
-		fields[0] = new Street.Builder().setTitle("Tribe Encampment").setDescription(".").setSubText(" ").setRent("100")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[1] = new Shipping.Builder().setTitle("Second Sail").setDescription(".").setSubText("+250")
-				.setBgColor(Color.blue).setFgColor(Color.blue).build();
-		fields[2] = new Street.Builder().setTitle("Crater").setDescription(".").setSubText("-100").setRent("300")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[3] = new Refuge.Builder().setTitle("Walled City").setDescription(".").setSubText("+100")
-				.setBgColor(Color.yellow).setFgColor(Color.yellow).build();
-		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription(":").setSubText("-20")
-				.setBgColor(Color.green).setFgColor(Color.green).build();
-		fields[5] = new Street.Builder().setTitle("Mountain").setDescription(".").setSubText("+180").setRent("500")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[6] = new Shipping.Builder().setTitle("Sea Grover").setDescription(".").setSubText("0")
-				.setBgColor(Color.blue).setFgColor(Color.blue).build();
-		fields[7] = new Street.Builder().setTitle("Cold Desert").setDescription(".").setSubText(".").setRent("700")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[8] = new Street.Builder().setTitle("Black Cave").setDescription(".").setSubText(".").setRent("1000")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[9] = new Street.Builder().setTitle("Goldmine").setDescription(".").setSubText("-80")
-				.setBgColor(Color.red).setFgColor(Color.red).build();
-		fields[10] = new Street.Builder().setTitle("The Werewall").setDescription(".").setSubText(".").setRent("1300")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[11] = new Street.Builder().setTitle("Mountain Village").setDescription(".").setSubText(".")
-				.setRent("1600").setBgColor(Color.blue).setFgColor(Color.red).build();
-		fields[12] = new Shipping.Builder().setTitle("The Buccaneers").setDescription(".").setSubText(" ")
-				.setBgColor(Color.blue).setFgColor(Color.blue).build();
-		fields[13] = new Street.Builder().setTitle("South Citidel").setDescription(".").setSubText("+250")
-				.setRent("2000").setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[14] = new Refuge.Builder().setTitle("Monestary").setDescription(".").setSubText("-100")
-				.setBgColor(Color.yellow).setFgColor(Color.yellow).build();
-		fields[15] = new Street.Builder().setTitle("The Pit").setDescription(".").setSubText("+100")
-				.setBgColor(Color.green).setFgColor(Color.green).build();
-		fields[16] = new Street.Builder().setTitle("Palace Gates").setDescription(".").setSubText("-20").setRent("2600")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[17] = new Shipping.Builder().setTitle("Privateer armada").setDescription(".").setSubText("+180")
-				.setBgColor(Color.blue).setFgColor(Color.blue).build();
-		fields[18] = new Street.Builder().setTitle("Caravan").setDescription(".").setSubText("0").setBgColor(Color.red)
-				.setFgColor(Color.red).build();
-		fields[19] = new Street.Builder().setTitle("Tower").setDescription(".").setSubText("-70").setRent("3200")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
-		fields[20] = new Street.Builder().setTitle("Castle").setDescription(".").setSubText("+60").setRent("4000")
-				.setBgColor(Color.white).setFgColor(Color.white).build();
+		fields[0] = new Street.Builder().setTitle("Tribe Encampment").setDescription("Territory").setSubText("Price: 1000").setRent("100")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[1] = new Shipping.Builder().setTitle("Second Sail").setDescription("Fleet").setSubText("Price: 4000")
+				.setBgColor(Color.blue).setFgColor(Color.white).build();
+		fields[2] = new Street.Builder().setTitle("Crater").setDescription("Territory").setSubText("Price: 1500").setRent("300")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[3] = new Street.Builder().setTitle("Walled City").setDescription("Refuge").setSubText("Reward: 5000")
+				.setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Punishment: Eyes x 100")
+				.setBgColor(Color.yellow).setFgColor(Color.black).build();
+		fields[5] = new Street.Builder().setTitle("Mountain").setDescription("Territory").setSubText("Price: 2000").setRent("500")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[6] = new Shipping.Builder().setTitle("Sea Grover").setDescription("Fleet").setSubText("Price: 4000")
+				.setBgColor(Color.blue).setFgColor(Color.white).build();
+		fields[7] = new Street.Builder().setTitle("Cold Desert").setDescription("Territory").setSubText("Price: 3000").setRent("700")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[8] = new Street.Builder().setTitle("Black Cave").setDescription("Territory").setSubText("Price: 4000").setRent("1000")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[9] = new Street.Builder().setTitle("Goldmine").setDescription("Tax").setSubText("2000 or 10% of balance tax!")
+				.setBgColor(Color.red).setFgColor(Color.black).build();
+		fields[10] = new Street.Builder().setTitle("The Werewall").setDescription("Territory").setSubText("Price: 4300").setRent("1300")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[11] = new Street.Builder().setTitle("Mountain Village").setDescription("Territory").setSubText("Price: 4750")
+				.setRent("1600").setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[12] = new Shipping.Builder().setTitle("The Buccaneers").setDescription("Fleet").setSubText("Price: 4000")
+				.setBgColor(Color.blue).setFgColor(Color.white).build();
+		fields[13] = new Street.Builder().setTitle("South Citidel").setDescription("Territory").setSubText("Price: 5000")
+				.setRent("2000").setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[14] = new Street.Builder().setTitle("Monestary").setDescription("Refuge").setSubText("Reward: 500")
+				.setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[15] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Punishment: Eyes x 100")
+				.setBgColor(Color.yellow).setFgColor(Color.black).build();
+		fields[16] = new Street.Builder().setTitle("Palace Gates").setDescription("Territory").setSubText("Price: 5500").setRent("2600")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[17] = new Shipping.Builder().setTitle("Privateer armada").setDescription("Fleet").setSubText("Price: 4000")
+				.setBgColor(Color.blue).setFgColor(Color.white).build();
+		fields[18] = new Street.Builder().setTitle("Caravan").setDescription("Tax").setSubText("4000 or 10% of balance tax!").setBgColor(Color.red)
+				.setFgColor(Color.black).build();
+		fields[19] = new Street.Builder().setTitle("Tower").setDescription("Territory").setSubText("Price: 6000").setRent("3200")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[20] = new Street.Builder().setTitle("Castle").setDescription("Territory").setSubText("Price: 8000").setRent("4000")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
 		GUI.create(fields);
 	}
-
+		
+		
+	
 	// public void showSquareInfo(Square theSquare) {
 	//
 	// }
@@ -171,6 +173,7 @@ public class GUIControl {
 		
 		
 	}
+	
 	
 	// set square as owned.
 	public void setOwned(int squareNumber,Player thePlayer){
