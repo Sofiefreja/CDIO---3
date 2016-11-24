@@ -54,6 +54,9 @@ public class Player {
 		
 		return counter;
 	}
+	public ArrayList <Ownable> returnOwned(){
+		return owned;
+	}
 	
 	/**
 	 * Method for determining the square IDs of the squares a player owns

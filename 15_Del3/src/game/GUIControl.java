@@ -118,19 +118,19 @@ public class GUIControl {
 	public static int getUserRoll() {
 		int value = 0;
 		Cup thecup = new Cup();
-
-		String input = GUI.getUserButtonPressed("You landed on a labor camp, roll to determine your punishment: ", "Roll");
-
-		if (input.equals("Roll"))
-			value = thecup.roll();
-
+		//String input = GUI.getUserButtonPressed("You landed on a labor camp, roll to determine your punishment: ", "Roll");
+		//GUI.getUserButtonPressed("You landed on a labor camp, roll to determine your punishment: ", "Roll").equals("Roll");
+		GUI.showMessage("You landed on a Labor Camp. You roll to determine the rent you need to pay.");
+		value = thecup.roll();
+		GUI.setDice(thecup.getD1(),thecup.getD2());
+		GUI.showMessage("You rolled: "+value);
 		return value;
 	}
 
 	// Player choice of buying a square or not.
-	public static boolean getBuyChoice(Ownable field) {
+	public static boolean getBuyChoice(Ownable field, int price) {
 
-		String input = GUI.getUserButtonPressed("Do you want to buy " + field.toString() + "?", "Yes", "No");
+		String input = GUI.getUserButtonPressed("Do you want to buy " + field.toString() + " for "+price+"?", "Yes", "No");
 		if (input.equals("Yes"))
 			return true;
 		else
@@ -144,7 +144,7 @@ public class GUIControl {
 		String TaxAmount = String.valueOf(theTax.getTaxAmount());
 		String output = null;
 
-		String input = GUI.getUserButtonPressed("You landed on a tax, you have two options: ", "Tax rate 10 %",
+		String input = GUI.getUserButtonPressed("You landed on "+theTax.toString()+", you have two options: ", "Tax rate 10 %",
 				"Tax Amount " + TaxAmount);
 		if (input.equals("Tax rate 10 %"))
 			output = "Tax rate";
@@ -159,20 +159,37 @@ public class GUIControl {
 
 		// Remove the players owned squares.
 		int[] list = thePlayer.ownedID();
-
+		ArrayList <Ownable> arr=thePlayer.returnOwned();
 		for (int i = 0; i < list.length; i++) {
 			GUI.removeOwner(list[i]);
+			arr.get(i).clearOwner();
 		}
 
 		// Remove Car
-		GUI.removeCar(thePlayer.getCurrentPosition(), thePlayer.toString());
-
+		GUI.removeCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
+		GUI.setBalance(thePlayer.toString(),0);
 	}
 
 	// set square as owned.
 	public static void setOwned(int squareNumber, Player thePlayer) {
 
 		GUI.setOwner(squareNumber, thePlayer.toString());
+	}
+	public static void updateBalance(Player player){
+		GUI.setBalance(player.toString(), player.getBalance());
+	}
+	public static void ownedMessage(Ownable field, Player landed, Player owner, int payment){
+		GUI.showMessage(landed.toString()+", you landed on "+field.toString()+", which is owned by "+owner.toString()+".\n"
+				+"You pay " +payment+"£ to "+owner.toString());
+	}
+	public static void buyMessage(Ownable field, Player player,int price){
+		GUI.showMessage("Congratulations! You have bought "+field.toString()+"! You pay "+price);
+	}
+	public static void taxMessage(Player player, int amount){
+		GUI.showMessage(player.toString()+" payed "+amount);
+	}
+	public static void refugeMessage(board.Refuge refuge, Player player, int bonus){
+		GUI.showMessage(player.toString()+", you landed on the Refuge "+refuge.toString()+". You are awarded a bonus of: "+bonus);
 	}
 
 }
