@@ -79,19 +79,19 @@ public class Vehicle {
 	private void setColor() {
 		switch (counter) {
 		case 1:
-			carColor = Color.blue;
+			carColor = Color.orange;
 			break;
 
 		case 2:
-			carColor = Color.green;
+			carColor = Color.magenta;
 			break;
 
 		case 3:
-			carColor = Color.red;
+			carColor = Color.pink;
 			break;
 
 		case 4:
-			carColor = Color.pink;
+			carColor = Color.cyan;
 			break;
 
 		case 5:
@@ -99,7 +99,7 @@ public class Vehicle {
 			break;
 
 		case 6:
-			carColor = Color.yellow;
+			carColor = Color.GRAY;
 			break;
 
 		}
