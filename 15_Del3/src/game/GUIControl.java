@@ -28,7 +28,7 @@ public class GUIControl {
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[3] = new Street.Builder().setTitle("Walled City").setDescription("Refuge").setSubText("Reward: 5000")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^labor camps owned")
+		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^camps owned")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[5] = new Street.Builder().setTitle("Mountain").setDescription("Territory").setSubText("Price: 2000").setRent("Rent: 500")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
@@ -44,17 +44,17 @@ public class GUIControl {
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[11] = new Street.Builder().setTitle("Mountain Village").setDescription("Territory").setSubText("Price: 4750")
 				.setRent("1600").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[12] = new Shipping.Builder().setTitle("The Buccaneers").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500^fleets owned")
+		fields[12] = new Shipping.Builder().setTitle("Buccaneers").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500^fleets owned")
 				.setBgColor(Color.blue).setFgColor(Color.white).build();
 		fields[13] = new Street.Builder().setTitle("South Citidel").setDescription("Territory").setSubText("Price: 5000")
 				.setRent("2000").setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[14] = new Street.Builder().setTitle("Monestary").setDescription("Refuge").setSubText("Reward: 500")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[15] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^labor camps owned")
+		fields[15] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes x 100^camps owned")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[16] = new Street.Builder().setTitle("Palace Gates").setDescription("Territory").setSubText("Price: 5500").setRent("Rent: 2600")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[17] = new Shipping.Builder().setTitle("Privateer armada").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500^fleets owned")
+		fields[17] = new Shipping.Builder().setTitle("Privateer").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500^fleets owned")
 				.setBgColor(Color.blue).setFgColor(Color.white).build();
 		fields[18] = new Street.Builder().setTitle("Caravan").setDescription("Tax").setSubText("4000 or 10% of balance tax!").setBgColor(Color.red)
 				.setFgColor(Color.black).build();
