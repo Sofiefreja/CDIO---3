@@ -32,9 +32,14 @@ public class Tax extends Square{
 		String ask;
 		ask=GUIControl.rateOrAmount(this);//Asks the player whether he wants to pay the 10 percent tax rate or the set tax amount.
 		if(ask.equals("Tax rate")){//if the player chose to pay the 10 % tax rate, this is calculated and payed.
-			player.pay((player.getBalance()/taxRate));
+			int pay =player.getBalance()/taxRate;
+			player.pay(pay);
+			GUIControl.taxMessage(player, pay);
+			GUIControl.updateBalance(player);
 		}else if(ask.equals("Tax Amount")){ //else the taxAmount for this instance is payed.
 			player.pay(taxAmount);
+			GUIControl.taxMessage(player, taxAmount);
+			GUIControl.updateBalance(player);
 		}
 	}
 }

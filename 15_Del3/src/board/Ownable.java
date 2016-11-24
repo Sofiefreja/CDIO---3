@@ -40,13 +40,19 @@ public abstract class Ownable extends Square {
 	//Implements the inherited method landOnSquare, to be overridden for each type with a different getRent() method.
 	public void landOnSquare(Player player) {
 		if (owner != null) {
-			player.pay(getRent());
-			owner.deposit(getRent());
+			int amount = getRent();
+			GUIControl.ownedMessage(this, player, owner, amount);
+			player.pay(amount);
+			owner.deposit(amount);
+			GUIControl.updateBalance(player);
+			GUIControl.updateBalance(owner);
 		} else {
-			if (GUIControl.getBuyChoice(this) == true) { //asks the player whether he wants to buy the square the player landed on or not.
+			if (GUIControl.getBuyChoice(this,this.price) == true) { //asks the player whether he wants to buy the square the player landed on or not.
+				GUIControl.buyMessage(this, player, price);
 				player.bought(this);
 				player.pay(this.price);
 				owner = player;
+				GUIControl.updateBalance(player);
 				GUIControl.setOwned(this.getID(),player);
 			}
 		}

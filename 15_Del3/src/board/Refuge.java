@@ -1,4 +1,5 @@
 package board;
+import game.GUIControl;
 import game.Player;
 /**
  * Class Refuge exteded from Square.
@@ -20,5 +21,7 @@ public class Refuge extends Square{
 	@Override
 	public void landOnSquare(Player player) {//adds the bonus amount of this instance to the players balance.
 		player.deposit(bonus);
+		GUIControl.refugeMessage(this,player,bonus);
+		GUIControl.updateBalance(player);
 	}
 }
