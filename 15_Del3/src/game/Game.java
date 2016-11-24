@@ -28,13 +28,12 @@ public class Game {
 																// ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
+			thePlayers.add(new Player(playerNames[i])); //Creating player objects for the game
+			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects for the GUI
+			
 
-			thePlayers.add(new Player(playerNames[i])); // Creating Player
-														// objects.
-			GUIGame.createPlayer(new Player(playerNames[i])); // Creating Player
-																// for the GUI.
 		}
-
+		
 		/*
 		 * Beginning the game.
 		 */

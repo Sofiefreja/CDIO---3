@@ -56,8 +56,8 @@ public class Tax extends Square {
 				GUIControl.taxMessage(player, taxAmount);
 				GUIControl.updateBalance(player);
 			}
-		} else {
-			GUIControl.taxNotEnoughMoney(this);
+		} else {//if the player has a lower balance than the taxAmount, he is automatically charged 10% tax rate.
+			GUIControl.taxNotEnoughMoney(this);//message is printed.
 			int pay = player.getBalance()/taxRate;
 			player.pay(pay);
 			GUIControl.updateBalance(player);

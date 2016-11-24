@@ -79,7 +79,7 @@ public class GUIControl {
 	public void createPlayer(Player newPlayer) {
 
 		// Creating the car.
-		Car car = new Car.Builder().typeUfo().patternFill().primaryColor(newPlayer.getColor()).build();
+		Car car = new Car.Builder().typeUfo().patternFill().primaryColor(newPlayer.getColor()).secondaryColor(newPlayer.getColor()).build();
 		// Creating player on board.
 		GUI.addPlayer(newPlayer.toString(), newPlayer.getBalance(), car);
 	}
@@ -197,7 +197,7 @@ public class GUIControl {
 		GUI.showMessage(player.toString()+", you landed on the Refuge "+refuge.toString()+". You are awarded a bonus of: "+bonus+"£");
 	}
 	public static void selfOwned(){
-		GUI.showMessage("You already own this square!");
+		GUI.showMessage("You are the owner of this square!");
 	}
 	public static void notEnoughMoney(Ownable own){
 		GUI.showMessage("Whoa there, you don't have enough money to buy "+own.toString());

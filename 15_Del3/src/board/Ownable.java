@@ -47,22 +47,23 @@ public abstract class Ownable extends Square {
 		this.owner = null;
 	}
 
-	@Override
+	
 	//Implements the inherited method landOnSquare, to be overridden for each type with a different getRent() method.
+	@Override
 	public void landOnSquare(Player player) {
-		if (owner != null) {
-			if(player.toString().equals(owner.toString())==false){
-			int amount = getRent();
-			GUIControl.ownedMessage(this, player, owner, amount);
+		if (owner != null) {//if the square is owned, the following happens.
+			if(player.toString().equals(owner.toString())==false){//if the player is not the owner of this field, the following happens
+			int amount = getRent();//the rent is calculated, depending on the subclass.
+			GUIControl.ownedMessage(this, player, owner, amount);//a message is printed to the player about the sequence.
 			player.pay(amount);
 			owner.deposit(amount);
 			GUIControl.updateBalance(player);
 			GUIControl.updateBalance(owner);
-			}else{
-				GUIControl.selfOwned();
+			}else{//if the 
+				GUIControl.selfOwned(); // prints "You are the owner of this square!"
 			}
-		}else if(player.getBalance()>=this.price){
-			if (GUIControl.getBuyChoice(this,player) == true) {
+		}else if(player.getBalance()>=this.price){// if the field isnt owned and the player has enough money, he has the choice of buying it.
+			if (GUIControl.getBuyChoice(this,player) == true) {//if player chooses to buy it, the following happens
 				GUIControl.buyMessage(this, player);
 				player.bought(this);
 				player.pay(this.price);
@@ -70,8 +71,7 @@ public abstract class Ownable extends Square {
 				GUIControl.updateBalance(player);
 				GUIControl.setOwned(this.getID(),player);
 				}
-			 //asks the player whether he wants to buy the square the player landed on or not.
-		}else{
+		}else{//if the square is not owned but the player can't afford it, a message is printed.
 			GUIControl.notEnoughMoney(this);
 		}
 	}

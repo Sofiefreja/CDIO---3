@@ -21,7 +21,7 @@ public class Refuge extends Square{
 	@Override
 	public void landOnSquare(Player player) {//adds the bonus amount of this instance to the players balance.
 		player.deposit(bonus);
-		GUIControl.refugeMessage(this,player,bonus);
+		GUIControl.refugeMessage(this,player,bonus);//prints a message to the user.
 		GUIControl.updateBalance(player);
 	}
 }
