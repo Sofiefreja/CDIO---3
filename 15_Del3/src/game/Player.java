@@ -10,7 +10,7 @@ public class Player {
 
 	private String name;
 	private Account balance = new Account();
-	private Vehicle vehicle = new Vehicle();
+	private Vehicle vehicle;
 	ArrayList<Ownable> owned = new ArrayList<Ownable>();
 	
 	/**
@@ -21,7 +21,7 @@ public class Player {
 	public Player (String name) {
 		this.name = name;
 		balance.deposit(30000);
-
+		vehicle = new Vehicle();
 	}
 	
 	/**
@@ -156,6 +156,4 @@ public class Player {
 	public Color getColor() {
 		return vehicle.getColor();
 	}
-	
-	
 }

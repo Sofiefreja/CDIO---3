@@ -27,16 +27,6 @@ public class Territory extends Ownable {
 	@Override
 	public void landOnSquare(Player player) {//Implements the inherited landOnSquare() for Territory.
 		super.landOnSquare(player);
-//		if (owner != null) {
-//			player.pay(getRent());
-//			owner.deposit(getRent());
-//		} else {
-//			if (GUIControl.MethodForAskingUserIfHeWantsToBuyTheSquare() == true) {
-//				player.bought(this);
-//				player.pay(price);
-//				owner = player;
-//			}
-//		}
 	}
 
 }
