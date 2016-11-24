@@ -109,7 +109,7 @@ public class TestRefuge {
           	this.refugeNeg200.landOnSquare(this.player);
           	
           	//It is not possible to deposit a negative amount
-          	expected = 800;
+          	expected = 1000;
           	actual = this.player.getBalance();
           	Assert.assertEquals(expected, actual);
    	}
@@ -124,7 +124,7 @@ public class TestRefuge {
           	this.refugeNeg200.landOnSquare(this.player);
           	
           	//It is still not possible to deposit a negative amount
-          	expected = 600;
+          	expected = 1000;
           	actual = this.player.getBalance();
           	Assert.assertEquals(expected, actual);
    	}
