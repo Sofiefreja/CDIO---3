@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import board.LaborCamp;
 import game.Player;
 
 
@@ -47,10 +49,11 @@ public class TestLaborCamp {
       	Assert.assertNotNull(this.aw3);
       	Assert.assertNotNull(this.aw4);
       	
-      	Assert.assertTrue(this.aw1 instanceof FakeLaborCamp);
-      	Assert.assertTrue(this.aw2 instanceof FakeLaborCamp);
-      	Assert.assertTrue(this.aw3 instanceof FakeLaborCamp);
-      	Assert.assertTrue(this.aw4 instanceof FakeLaborCamp);
+      	//Tests to see if this is a valid instance of Labor Camp.
+      	Assert.assertTrue(this.aw1 instanceof LaborCamp);
+      	Assert.assertTrue(this.aw2 instanceof LaborCamp);
+      	Assert.assertTrue(this.aw3 instanceof LaborCamp);
+      	Assert.assertTrue(this.aw4 instanceof LaborCamp);
 	}
 	
 	@Test
