@@ -19,7 +19,7 @@ public class Account {
 	 */
 
 	public void deposit(int value) {
-		if (value > 0){
+		if (value > 0) {
 			balance += value;
 		}
 	}
@@ -31,7 +31,9 @@ public class Account {
 	 */
 
 	public void pay(int value) {
-		balance -= value;
+		if (value > 0) {
+			balance -= value;
+		}
 	}
 
 	/**

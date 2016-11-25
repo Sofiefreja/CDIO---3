@@ -8,7 +8,6 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import board.Fleet;
-
 import board.LaborCamp;
 
 import game.Player;

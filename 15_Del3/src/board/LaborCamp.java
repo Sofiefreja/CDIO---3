@@ -8,7 +8,7 @@ import game.GUIControl;
  */
 public class LaborCamp extends Ownable{
 	//baseRent is the factor used in getRent().
-	private int baseRent=100; 
+	protected int baseRent=100; 
 	
 	/**
 	 * Constructor for LaborCamp, which accepts two parameters, name and price.
@@ -32,5 +32,9 @@ public class LaborCamp extends Ownable{
 	@Override
 	public void landOnSquare(Player player){//implements the method from Ownable.
 		super.landOnSquare(player);
+	}
+	@Override
+	public void clearOwner(){
+		owner=null;
 	}
 }
