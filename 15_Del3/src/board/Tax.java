@@ -50,6 +50,7 @@ public class Tax extends Square {
 				int pay = player.getBalance() / taxRate;
 				player.pay(pay);
 				GUIControl.taxMessage(player, pay);
+				GUIControl.updateBalance(player);
 			} else if (ask.equals("Tax Amount")) { // else the taxAmount for
 													// this instance is payed.
 				player.pay(taxAmount);
